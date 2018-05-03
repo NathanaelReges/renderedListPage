@@ -1,0 +1,115 @@
+edge limit
+
+    = (container0EleHeight - scrollerEleHeight)// getMaxScroll()
+
+    addToContainer0Height()
+    moveContainer2()
+    scrollerEle.scrollTop = // getScrollTop()
+
+    addToContainer0Height()
+    restoreScrollBar()
+
+    = transformBot - (container2Ele.offsetHeight) //getContainer2Height()
+
+    = transformTop + (container2Ele.offsetHeight) //getContainer2Height()
+    = container0EleHeight
+
+    = scrollerEle.scrollTop // getScrollTop()
+
+    = (container0EleHeight - scrollerEleHeight) //getMaxScroll()
+
+
+
+addPosts 
+
+    addToArrayOfItems()
+    edgeLimit.unlock()
+
+
+    = scrollerEle.scrollTop
+    edgeLimit.expandBot()
+    = container0EleHeight - scrollerEleHeight
+    scrollerEle.scrollTop = 
+    checkScroll()
+
+
+    addToArrayOfItems()
+    edgeLimit.expandTop()
+
+    addToArrayOfItems()
+    edgeLimit.unlock()
+
+
+    container0Ele.appendChild()
+
+
+closerToTheEdge    
+
+    = arrayOfItems.length
+
+    restoreScrollBar()
+
+            
+    scrollerEle.prepend(ele)
+    scrollerEle.append(ele)
+
+    if(!telaIsIn) {
+        await talaIsInPromis
+    }
+
+    addPosts.above()
+    = arrayOfItems.length
+
+
+    addPosts.under()
+
+    restoreScrollBar
+
+
+pullUpdate
+
+    container0Ele.append()
+
+    container0Ele.style.transform =
+
+    container0Ele.style.transition
+
+    container0Ele.style.transform =
+
+    scrollerEle.scrollTop =
+
+    scrollerEle.addEventListener
+
+    = scrollerEle.scrollTop 
+
+
+
+ideas 
+
+
+
+function pullUpdate () {
+    updateHeaderInterface = fixedContainer.initUpdateHeader(ele)
+
+    updateHeader.move(value)
+    
+    updateHeader.move('intial')
+
+    updateHeader.remove()
+    
+
+}
+
+
+when the page has a header
+    You can then mesure the space taken by the header 
+    and then aply it to the first transformTop on movingContainer.
+    The distance can be mesured on the container0
+    or on the container2 itselsef (then you will need to change the position of it to normal)
+
+
+movingContainer
+
+    use position relative
+    then mesure the distance from the container form the top o the page
+    and apply that to the midleItemTopY to get it right

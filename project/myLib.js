@@ -1,4 +1,4 @@
-_['tools/myLib'] = {
+_['myLib.js'] = {
 
     tryCall: function (fun) {
         if(fun instanceof Function){
@@ -26,12 +26,16 @@ _['tools/myLib'] = {
     },
 
     makeEleGlow: function (ele) { //we choosed this
+        ele.style.transition = '0.05s transform'
+
         ele.addEventListener('touchstart', ()=> {
-            ele.classList.add('glow') 
+            ele.willChange = 'transform' 
+            ele.style.transform = 'scale(0.9)'
         }, {passive: true})
         
         ele.addEventListener('touchend', ()=> {
-            ele.classList.remove('glow')
+            ele.style.transform = ''
+            ele.willChange = ''
         }, {passive: true})
     },
 

@@ -8,6 +8,7 @@
         .scrollBy(value)
         .scrollTo(value)
         .addScrollListener(fun)
+        .disconnect()
         .isScrolledToTheEnd()
     //
 */
@@ -15,13 +16,18 @@
 
 _['renderedList/scrollerControl'] = function getScrollerControl (reverse) {
 
-    const module = {}
-    const scrollerEle = document.documentElement
+    let scrollerEle = document.documentElement
+
     
-    let height = 0
+
+    let height = 0,
+        scrollListener = undefined
+    //
 
 
 
+    const module = {}
+    
     module.getHeight = ()=>{
         if(!height){
             height = scrollerEle.offsetHeight
@@ -30,11 +36,11 @@ _['renderedList/scrollerControl'] = function getScrollerControl (reverse) {
         return height
     }
 
-    module.getMaxScroll = ()=>{
+    module.getMaxScroll = () => {
         return scrollerEle.scrollHeight - module.getHeight()
     }
 
-    module.getScrollValue = ()=>{
+    module.getScrollValue = () => {
         return scrollerEle.scrollTop
     }
 
@@ -42,7 +48,7 @@ _['renderedList/scrollerControl'] = function getScrollerControl (reverse) {
         scrollerEle.scrollBy(0, value)
     }
 
-    module.scrollTo = (value)=>{
+    module.scrollTo = (value) => {
         if(value === 'start'){
             value = reverse? scrollerEle.scrollHeight + 100 : 0
         }
@@ -51,8 +57,16 @@ _['renderedList/scrollerControl'] = function getScrollerControl (reverse) {
     }
 
     module.addScrollListener = (fun) => {
+        scrollListener = fun 
         document.addEventListener('scroll', fun, {passive: true})
-    } 
+    }
+    
+    module.disconnect = (fun) => {
+        //Disconnect the listener and the root element
+        //to assure no unexpect behavior 
+        document.removeEventListener('scroll', scrollListener)
+        scrollerEle = document.createElement('div')
+    }
     
     module.isScrolledToTheEnd = () => {
         return scrollerEle.scrollTop === module.getMaxScroll()
@@ -62,7 +76,3 @@ _['renderedList/scrollerControl'] = function getScrollerControl (reverse) {
 
     return module
 }
-
-
-
-

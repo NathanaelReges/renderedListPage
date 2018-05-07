@@ -1,4 +1,4 @@
-_['getMessagesData'] = function getPostsData () {
+_['data/getMessagesData.js'] = function () {
 
 
 	return [

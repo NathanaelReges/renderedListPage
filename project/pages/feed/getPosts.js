@@ -1,12 +1,12 @@
-_['getPosts'] = function getPosts () {
+_['pages/feed/getPosts.js'] = function getPosts () {
     
-    const newEle = _['tools/myLib'].newEle
-    const myIcos = _['img/myIcos']
-    const getIcoEle = _['img/myIcos'].getEle
-    const postsData = _['getPostsData']()
+    const newEle = _['myLib.js'].newEle
+    const myIcos = _['img/myIcos.js']
+    const getIcoEle = _['img/myIcos.js'].getEle
+    const postsData = _['data/getPostsData.js']()
     
 
-    let postStyle = newEle(`<style>
+    let postsStyle = newEle(`<style>
     
         .feed-post {
             background-color: white;
@@ -160,9 +160,9 @@ _['getPosts'] = function getPosts () {
 
 
 
-    let posts = postsData.map(renderPost)
+    let arrayOfPostEles = postsData.map(renderPost)
 
-    return {posts, postStyle}
+    return {arrayOfPostEles, postsStyle}
 
 }
 

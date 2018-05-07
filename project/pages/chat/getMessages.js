@@ -1,14 +1,12 @@
-_['getMessages'] = function getChat () {
+_['pages/chat/getMessages.js'] = function getChat () {
     
-    const newEle = _['tools/myLib'].newEle
-    const myIcos = _['img/myIcos']
-    const getIcoEle = _['img/myIcos'].getEle
-    const chatData = _['getMessagesData']()
+    const newEle = _['myLib.js'].newEle
+    const chatData = _['data/getMessagesData.js']()
     
 
 
 
-    let postStyle = newEle(`<style>
+    let messagesStyle = newEle(`<style>
 
         .post-chat_comment {
             background-color: white;
@@ -33,7 +31,7 @@ _['getMessages'] = function getChat () {
         /**/
 
         .post-chat_comment_sent {
-            background: lightgrey;
+            background: darkgray;
             padding: 7px;
             margin: 0px 7px;
             max-width: 85%;
@@ -111,9 +109,9 @@ _['getMessages'] = function getChat () {
 
 
 
-    let posts = chatData.map(renderMessage)
+    let arrayOfMessageEles = chatData.map(renderMessage)
 
-    return {posts, postStyle}
+    return {arrayOfMessageEles, messagesStyle}
 
 }
 

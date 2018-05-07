@@ -1,6 +1,6 @@
-_['img/myIcos'] = (function init_myIcos () {
+_['img/myIcos.js'] = (function init_myIcos () {
     
-    const newEle = _['tools/myLib'].newEle
+    const newEle = _['myLib.js'].newEle
 
     const color = '#6b42f4'
 

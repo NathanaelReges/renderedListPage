@@ -78,10 +78,6 @@ _['renderedList/init.js'] = function initRenderedList (arrayOfItems, {reverse} =
             if(indexLimit)
                 indexLimit.start()
             //
-        },
-        reachedScrollTop () {
-            
-            //
         }
     }
 
@@ -155,6 +151,10 @@ _['renderedList/init.js'] = function initRenderedList (arrayOfItems, {reverse} =
                 scrollerControl.scrollTo('start')
             }
         }
+    }
+
+    module.removed = () => {
+        scrollerControl.disconnect()
     }
 
     module.addItemsToStart = (array) => {

@@ -81,7 +81,6 @@ _['renderedList/scrollLimit'] = function scrollLimit (reverse, {fixedContainer, 
                 }   
             })
         }) 
-        
     }
 
     module.unlock = function (){

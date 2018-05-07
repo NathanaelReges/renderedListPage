@@ -22,10 +22,15 @@ _['renderedList/addItems'] = function addItems (reverse, {arrayControl, scrollLi
 
         scrollLimit.expand('start', height)
 
+        
+        
         ///if the user is at the bottom of the page, add the items and scroll down to show then
         if(reverse && isScrolledToTheEnd){ 
-            scrollerControl.scrollBy(height)
-            movingContainer.forceCheck() //Check now to show the items in this frame.
+            scrollerControl.scrollBy(height)   
+        }
+
+        if(reverse){
+            movingContainer.forceCheck() //For the items to appear in this frame it is necessary to check right now.
         }
     }
 

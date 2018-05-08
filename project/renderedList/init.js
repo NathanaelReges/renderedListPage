@@ -1,4 +1,8 @@
 _['renderedList/init.js'] = function initRenderedList (arrayOfItems, {reverse} = {}) {
+
+    if(!Array.isArray(arrayOfItems))
+        return
+    //
     
     const initFixedContainer = _['renderedList/fixedContainer']
     const initArrayControl = _['renderedList/arrayControl']

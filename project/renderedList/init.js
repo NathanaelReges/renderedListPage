@@ -159,6 +159,8 @@ _['renderedList/init.js'] = function initRenderedList (arrayOfItems, {reverse} =
 
     module.removed = () => {
         scrollerControl.disconnect()
+        module.addItemsToStart = () => {}
+        module.addItemsToEnd = () => {}
     }
 
     module.addItemsToStart = (array) => {

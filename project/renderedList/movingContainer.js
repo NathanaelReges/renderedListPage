@@ -159,7 +159,9 @@ _['renderedList/movingContainer'] = function initMovingContainer (arrayOfItems, 
 
 
     function checkScroll (e) {
-        const myScrolly = scrollY
+        const myScrolly = document.documentElement.scrollTop
+
+        console.log('moveScrollY: ' + myScrolly)
         
         let checkAgain = false,
             goDownBy = 0,
@@ -249,7 +251,6 @@ _['renderedList/movingContainer'] = function initMovingContainer (arrayOfItems, 
                 if(indexOfLowestItem < indexLimit){
                     module.listeners.reachedIndexLimit()
                 }
-                
                 if(myScrolly > scrollLimit){
                     module.listeners.reachedScrollLimit() 
                 }

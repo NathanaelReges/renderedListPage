@@ -4,7 +4,7 @@ _['app.js'] = (function () {
     const getChatPage = _['page/chat/getChatPage.js']
     
     
-    const initialPage = 'chat'
+    const initialPage = 'feed'
     
     let currentPage = undefined,
     currentPageStr = undefined;

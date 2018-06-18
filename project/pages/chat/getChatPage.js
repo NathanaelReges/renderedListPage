@@ -45,6 +45,10 @@ _['page/chat/getChatPage.js'] = function () {
                 padding: 1px 8px;
             }
 
+            .feed_button * {
+                pointer-events: none;
+            }
+
         </style>
 
         <div class="headd">
@@ -55,7 +59,7 @@ _['page/chat/getChatPage.js'] = function () {
             Your Footer
             <div class="feed_button_box">
                 <div class="feed_button">
-                    FEED
+                    <span>FEED</span>
                 </div>
             </div>
         </div>
@@ -122,30 +126,11 @@ _['page/chat/getChatPage.js'] = function () {
 
 
 
-    function initRenderedListForMe (posts) {
-        const renderedList = initRenderedList(posts, {reverse: true})
+    function initRenderedListForMe (messages) {
+        messages = messages.concat(messages.slice())
 
-        let counter1 = 0
-        renderedList.setPullUpdate(()=>{
-            return new Promise(resolve =>{
-                if(counter1>2) {
-                    resolve(false)
-                    return
-                }
-                counter1++
+        const renderedList = initRenderedList(messages, {reverse: true})
 
-                setTimeout(()=>{
-                    const array = posts.slice(20, 25)
-
-                    const mapedArray = array.map((ele) => {
-                        const cloneEle = ele.cloneNode(true)
-                        return cloneEle
-                    })
-
-                    resolve(mapedArray)
-                }, 200)
-            })
-        })
 
         let counter2 = 0
         renderedList.setInfiniteLoading(()=>{
@@ -157,7 +142,7 @@ _['page/chat/getChatPage.js'] = function () {
                 counter2++
 
                 setTimeout(()=>{
-                    const array = posts.slice(20, 25)
+                    const array = messages.slice(20, 55)
 
                     const mapedArray = array.map((ele) => {
                         const cloneEle = ele.cloneNode(true)
@@ -165,7 +150,7 @@ _['page/chat/getChatPage.js'] = function () {
                     })
 
                     resolve(mapedArray)
-                }, 2000)
+                }, 4000)
             })
         })
 
@@ -176,7 +161,7 @@ _['page/chat/getChatPage.js'] = function () {
 
         const newMessages = getNewMessages()
         
-        addNewMessages(newMessages)
+        //addNewMessages(newMessages)
 
         
         
@@ -199,7 +184,7 @@ _['page/chat/getChatPage.js'] = function () {
 
 
         function getNewMessages () {
-            const newMessages = posts.slice(0, 2).map(ele => ele.cloneNode(true))
+            const newMessages = messages.slice(0, 2).map(ele => ele.cloneNode(true))
             newMessages.reverse()
     
             newMessages[0].children[0].innerText = 'Nathanael Reges'

@@ -28,15 +28,21 @@ _['myLib.js'] = {
     makeEleGlow: function (ele) { //we choosed this
         ele.style.transition = '0.05s transform'
 
-        ele.addEventListener('touchstart', ()=> {
+    
+        ele.addEventListener('touchstart', pointerDown, {passive: true})    
+        ele.addEventListener('touchend', pointerUp, {passive: true})
+        ele.addEventListener('mousedown', pointerDown, {passive: true})    
+        ele.addEventListener('mouseup', pointerUp, {passive: true})
+
+        function pointerDown () {
             ele.willChange = 'transform' 
             ele.style.transform = 'scale(0.9)'
-        }, {passive: true})
-        
-        ele.addEventListener('touchend', ()=> {
+        }
+
+        function pointerUp() {
             ele.style.transform = ''
             ele.willChange = ''
-        }, {passive: true})
+        }
     },
 
     createAllValid: function createAllValid () {

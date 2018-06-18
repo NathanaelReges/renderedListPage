@@ -48,6 +48,9 @@ _['page/chat/getFeedPage.js'] = function () {
                 padding: 1px 8px;
             }
 
+            .chat_button * {
+                pointer-events: none;
+            }
 
         </style>
 
@@ -55,7 +58,7 @@ _['page/chat/getFeedPage.js'] = function () {
             Your Header
             <div class="chat_button_box">
                 <div class="chat_button">
-                    CHAT
+                    <span>CHAT</span>
                 </div>
             </div>
         </div>
